@@ -1,9 +1,11 @@
 *{
-  background-color: #30346D
+  background-color: black;
+  margin: 0px;
 }
 h1{
   text-align: center; 
   color: white;
+  margin-bottom: 20px;
 }
 h2{
   text-align: center;
@@ -12,24 +14,25 @@ h2{
 }
 button{
   margin-top: 10px;
-  width: 300px;
-  height: 50px;
-  background-color: yellow;
+  width: 100px;
+  height: 30px;
+  background-color: purple;
   font-size: 20px;
+  margin-left: 20%;
 }
 #conversion{
-  border: 2px solid white;
   text-align: center;
-  height: 190px;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 350px;
+  border-radius: 50%;
+  width: 500px;
 }
 input{
   text-align: center;
-  width: 300px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   color: white;
-  font-size: 30px;
 }
 #output{
   border: 2px solid white;
@@ -37,7 +40,63 @@ input{
   margin-left: 60px;
   margin-right: 60px;
   text-align: center;
-  margin-top: 20px;
   color: white;
   font-size: 30px;
+}
+p{
+  color: white;
+  font-size: 40px;
+}
+
+#eleven-one{
+  display: flex;
+}
+
+#eleven{
+  margin-left: 20%
+}
+
+#one{
+  margin-left: 45%;
+}
+#ten-two{
+  display: flex;
+}
+
+#ten{
+  margin-left: 8%;
+}
+
+#two{
+  margin-left: 70%;
+}
+
+#nine-three{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+
+#eight-four{
+  display: flex;;
+}
+
+#eight{
+  margin-left: 8%
+}
+
+#four{
+  margin-left: 20%;
+}
+
+#seven-five{
+  display: flex;
+}
+
+#seven{
+  margin-left: 24%
+}
+
+#five{
+  margin-left: 36%;
 }
