@@ -1,29 +1,44 @@
-const button = document.getElementById("convert-btn");
-const input = document.getElementById("number");
-const result = document.getElementById("output");
-function checkInput(){
-  if(input.value === ""){
-    result.innerText = "Please enter a valid number";
+const inputElement = document.getElementById("number");
+const convertButton = document.getElementById("convert-btn");
+const output = document.getElementById("output");
+const numeralArray = [
+  ["M", 1000],
+  ["CM", 900],
+  ["D", 500],
+  ["CD", 400],
+  ["C", 100],
+  ["XC", 90],
+  ["L", 50],
+  ["XL", 40],
+  ["X", 10],
+  ["IX", 9],
+  ["V", 5],
+  ["IV", 4],
+  ["I", 1]
+]
+
+const checkInput = () => {
+  output.innerText = "";
+  if(inputElement.value === ""){
+    output.innerText = "Please enter a valid number";
   }
-  else if(input.value <= -1){
-    result.innerText = "Please enter a number greater than or equal to 1";
+  if(inputElement.value < 0){
+    output.innerText = "Please enter a number greater than or equal to 1";
   }
-  else if(input.value >= 4000){
-    result.innerText = "Please enter a number less than or equal to 3999";
+  else if(inputElement.value >= 4000){
+    output.innerText = "Please enter a number less than or equal to 3999";
   }
   else{
-    convert(input.value);
+    convertNumber(inputElement.value);
   }
 }
-function convert(num){
-  var numerals = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];
-  var results = [];
-  numerals.forEach(function(p) {
-    while (num >= p[1]) {
-      results.push(p[0]);
-      num -= p[1];
+const convertNumber = (number) => {
+  for(let i=0; i<numeralArray.length; i++){
+    while(number >= numeralArray[i][1]){
+      number -= numeralArray[i][1];
+      output.innerText += numeralArray[i][0];
     }
-  });
-  result.innerText =  results.join('');
+  }
 }
-button.addEventListener("click", checkInput);
+
+convertButton.addEventListener("click", checkInput);
