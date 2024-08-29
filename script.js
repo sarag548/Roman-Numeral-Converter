@@ -19,17 +19,18 @@ const numeralArray = [
 
 const checkInput = () => {
   output.innerText = "";
-  if(inputElement.value === ""){
+  const value = inputElement.value;
+  if(value === ""){
     output.innerText = "Please enter a valid number";
   }
-  if(inputElement.value < 0){
+  if(value < 0){
     output.innerText = "Please enter a number greater than or equal to 1";
   }
-  else if(inputElement.value >= 4000){
+  else if(value >= 4000){
     output.innerText = "Please enter a number less than or equal to 3999";
   }
   else{
-    convertNumber(inputElement.value);
+    convertNumber(value);
   }
 }
 const convertNumber = (number) => {
